@@ -35,10 +35,12 @@
                 <li><a href="#">취업 로드맵</a></li>
                 <li>
                     <!-- 검색창을 포함한 HTML -->
-                    <form>
-                        <input type="search" id="search-input" name="query" placeholder="검색어를 입력하세요">
-                        <button type="submit">검색</button>
-                    </form>
+                    <div class="search">
+                        <input type="text" class="searchTerm" placeholder="Search..">
+                        <button type="submit" class="searchButton">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
 
                     <!-- 최근 검색어를 표시할 드롭다운 메뉴 -->
                     <div class="recent-searches">
@@ -63,20 +65,45 @@
                             <p class="hcl_1">코딩이 쉬워지는 Ezen의 놀라운 강의!</p>
                             <p class="hcl_2">코딩,</p>
                             <p class="hcl_3"> </p>
-                            <p class="hcl_4">집니다.</p>
+                            <p class="hcl_4"> </p>
                         </div>
 
                         <div id="hcr">
-                            <img src="../img/headcont/hero-classroom-large.png" alt="#" class="hcr_1" width="1000" height="520">
-                            <img src="../img/headcont/hero-badge-large.png" alt="#" class="hcr_1" width="380" height="140">
-                            <img src="../img/headcont/hero-streak-large.png" alt="#" class="hcr_1" width="380" height="300">
-                            <img src="../img/headcont/hero-studying.png" alt="#" class="hcr_1" width="320" height="52">
+                            <img src="../img/headcont/hero-classroom-large.png" alt="#" class="hcr_1" width="900" height="520">
+                            <img src="../img/headcont/hero-badge-large.png" alt="#" class="hcr_2" width="250" height="100">
+                            <img src="../img/headcont/hero-streak-large.png" alt="#" class="hcr_3" width="380" height="300">
+                            <img src="../img/headcont/hero-studying.png" alt="#" class="hcr_4" width="320" height="42">
                         </div>
                     </div>
                 </header>
                 <section class="content">
-                    <h1>Content</h1>
+                    <div id="content_head">
+                        <h2><span>코드잇과 함께</span> 이루고 싶은 목표 <span>가 있나요?</span></h2>
+                        <section>
+                            <p class="coh">
+
+                                <span class="sec1">코딩과 친해지기</span><br>
+                                <b>"처음이라 막연해요."</b>
+                            </p>
+                            <p class="cop">
+
+                                <span class="sec1">취업하기</span><br>
+                                <b>"개발/데이터 직군으로 취업하고 싶어요."</b>
+                            </p>
+                            <p class="col">
+
+                                <span class="sec1">스킬 배우기</span><br>
+                                <b>"특정 언어/분야를 배우고 싶어요."</b>
+                            </p>
+                        </section>
+                    </div>
+                    <div id="content_main">
+                        <p>코딩과 친해지기</p>
+                        <h2>내게 맞는 방향성을 찾고 싶다면 <br> [프로그래밍 오버뷰]로 시작!</h2>
+
+                    </div>
                 </section>
+
 
                 <footer>
                     <h1>Footer</h1>

@@ -9,29 +9,52 @@ $(document).ready(function() {
             $('#main_content').fadeIn(500);
             setTimeout(function() {
                 /* typing js */
-                var str = '쉽고 재밌어 ';
-                var typing = ' ';
-                var i = 0;
+                var words = ['매우', '어렵습니다.', '하지만 RainbowTeam과', '여러분이 함께라면', ' 쉽고 즐거워 집니다.'],
+                    part,
+                    i = 0,
+                    offset = 0,
+                    len = words.length,
+                    forwards = true,
+                    skip_count = 0,
+                    skip_delay = 15,
+                    speed = 70;
+                var wordflick = function () {
+                    setInterval(function () {
+                        if (forwards) {
+                            if (offset >= words[i].length) {
+                                ++skip_count;
+                                if (skip_count == skip_delay) {
+                                    forwards = false;
+                                    skip_count = 0;
+                                }
+                            }
+                        }
+                        else {
+                            if (offset == 0) {
+                                forwards = true;
+                                i++;
+                                offset = 0;
+                                if (i >= len) {
+                                    i = 0;
+                                }
+                            }
+                        }
+                        part = words[i].substr(0, offset);
+                        if (skip_count == 0) {
+                            if (forwards) {
+                                offset++;
+                            }
+                            else {
+                                offset--;
+                            }
+                        }
+                        $('.hcl_3').text(part);
+                    },speed);
+                };
 
-                (function type() {
-                    if (i < str.length) {
-                        typing = typing + str.charAt(i);
-                        $('.hcl_3').text(typing + '_');
-                    } else {
-                        $('.hcl_3').text(typing);
-                        return false;
-                    }
-
-                    var ran = Math.floor(Math.random() * 300) + 150;
-                    // This gives a random delay between each character so it feels more realistic.
-                    // Set `ran` to a fixed number if you want consistent speed.
-
-                    setTimeout(function() {
-                        type();
-                    }, ran);
-
-                    i++;
-                })();
+                $(document).ready(function () {
+                    wordflick();
+                });
                 /* END */
             }, 4000); // 2초 딜레이 후 typing 함수 실행
         });
