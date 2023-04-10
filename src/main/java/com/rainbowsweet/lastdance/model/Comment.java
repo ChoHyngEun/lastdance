@@ -24,6 +24,7 @@ public class Comment {
 
     private LocalDateTime createdAt;
 
+
     @ManyToOne
     private Community community;
 
@@ -84,5 +85,9 @@ public class Comment {
             return author.getMemberId();
         }
         return null;
+
+        /*author필드의 memberid 값을 반환함.
+        * author가 null일 경우 null값을 반환함
+        * */
     }
 }

@@ -19,6 +19,7 @@ public class Member implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
     @Column(nullable = false, unique = true)
     @NotBlank(message = "사용자 아이디는 필수 입니다.")
     private String memberId;
@@ -47,6 +48,10 @@ public class Member implements Serializable {
     @Column(nullable = false)
     private String otpcheck;
 
+    private boolean firstlogin;
+    /*하루마다 로그인을 하면 true값이 되고
+    * true가 되면 자동으로 firstlogincount에 +1이 됩니다.*/
+    private int firstlogincount;
 
     public Member(){
 
