@@ -43,6 +43,15 @@ public class Member implements Serializable {
     @Email(message = "올바른 이메일 형식이 아닙니다.")
     private String email;
 
+    private boolean login;
+
+    private int logincount;
+    /*
+    * boolean login에서 true or false로 값이 매겨지고
+    * true가 될때마다 logincount에 1씩 쌓이도록 할예정
+    * */
+
+
 
     @Column(nullable = false)
     private String otpcheck;
@@ -118,7 +127,22 @@ public class Member implements Serializable {
         this.otpcheck = otpcheck;
     }
 
-    /*public changePassword(String newPassword){
+    public boolean isLogin() {
+        return login;
+    }
+
+    public void setLogin(boolean login) {
+        this.login = login;
+    }
+
+    public int getLogincount() {
+        return logincount;
+    }
+
+    public void setLogincount(int logincount) {
+        this.logincount = logincount;
+    }
+/*public changePassword(String newPassword){
         this.password = newPassword;
     }*/
 }
