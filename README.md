@@ -28,3 +28,6 @@ rainbow sweet은 총 3개의 homepage copy를 할 예정이며
 
 
 팀명은 rainbowsweet이다.
+
+
+// 2023.04.10 팀원 합류 김종민(예명:할리퀸)
