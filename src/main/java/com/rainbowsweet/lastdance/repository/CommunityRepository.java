@@ -23,7 +23,8 @@ public interface CommunityRepository extends JpaRepository<Community, Long> {
     * 이메서드를 사용하면 community에닡티에서 author 필드를 기준으로 조회가능.
     * 이를 이용하면 community엔티티에서 특정 작성자의 게시물을 조회할 수 있음.*/
 
-    List<Community> findAllByClassClassCategory(Community.ClassCategory classCategory);
+    List<Community> findAllByClasscategory(Community.ClassCategory classCategory);
+
 
     /*findAll<-을 쓴이유는 카테고리에 해당하는 모든 데이터를 찾을때 사용함.
     * */

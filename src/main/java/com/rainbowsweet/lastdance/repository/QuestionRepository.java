@@ -11,6 +11,6 @@ public interface QuestionRepository extends JpaRepository<Question, Long> {
 
     List<Question> findByQuestion(String question);
 
-    List<Question> findByLikescount(int liksecount);
+    List<Question> findByLikesCount(int likesCount);
 
 }
