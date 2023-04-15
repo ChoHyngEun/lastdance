@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Git.lastdance.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Git.lastdance.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.rainbowsweet.lastdance.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.rainbowsweet.lastdance.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/lastdance.main.iml" filepath="$PROJECT_DIR$/.idea/modules/lastdance.main.iml" />
     </modules>
