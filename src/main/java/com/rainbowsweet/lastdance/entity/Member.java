@@ -1,4 +1,4 @@
-package com.rainbowsweet.lastdance.model;
+package com.rainbowsweet.lastdance.entity;
 
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -8,6 +8,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+
+//Entity: 애플리케이션에서 사용되는 데이터 모델을 정의합니다. 이러한 모델은 데이터베이스와 연동하여 영구적으로 저장됩니다.
 
 @Entity
 @Table
@@ -36,7 +38,7 @@ public class Member implements Serializable {
     @Column(nullable = false)
     @NotBlank(message = "비밀번호는 필수 입력 항목입니다.")
     @Size(min = 8, message = "비밀번호는 최소 8자 이상이여야 합니다.")
-    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$", message = "비밀번호는 알파벳 대소문자와 숫자,특수문자(@$!%*?&)중 하나를 포함한 8자리 이상이어야 합니다.")
+//    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$", message = "비밀번호는 알파벳 대소문자와 숫자,특수문자(@$!%*?&)중 하나를 포함한 8자리 이상이어야 합니다.")
     private String password;
 
     @Column(nullable = false)
@@ -51,11 +53,10 @@ public class Member implements Serializable {
     * true가 될때마다 logincount에 1씩 쌓이도록 할예정
     * */
 
-
-
+    //현재 임시로 otpcheck 값에 공백 값을 줘서 에러없이 진행되게 해놓음.
+    //otp 구현 후에는 "" 구문 삭제해야함.
     @Column(nullable = false)
-    private String otpcheck;
-
+    private String otpcheck = "";
 
     public Member(){
 
@@ -65,10 +66,11 @@ public class Member implements Serializable {
         this.name = name;
         this.password = password;
         this.email = email;
-
     }
 
-    public Long getId(){return id;}
+    public Long getId(){
+        return id;
+    }
     /*
     * getid()라는 이름을 가진 메서드를 만드는것.
     * 메서드란 클래스 안에서 기능을 수행하는 코드들의 모음.

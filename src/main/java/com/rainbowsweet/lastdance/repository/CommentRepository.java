@@ -1,7 +1,7 @@
 package com.rainbowsweet.lastdance.repository;
 
-import com.rainbowsweet.lastdance.model.Comment;
-import com.rainbowsweet.lastdance.model.Member;
+import com.rainbowsweet.lastdance.entity.Comment;
+import com.rainbowsweet.lastdance.entity.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
