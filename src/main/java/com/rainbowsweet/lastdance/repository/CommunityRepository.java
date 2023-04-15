@@ -1,7 +1,7 @@
 package com.rainbowsweet.lastdance.repository;
 
-import com.rainbowsweet.lastdance.model.Community;
-import com.rainbowsweet.lastdance.model.Member;
+import com.rainbowsweet.lastdance.entity.Community;
+import com.rainbowsweet.lastdance.entity.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

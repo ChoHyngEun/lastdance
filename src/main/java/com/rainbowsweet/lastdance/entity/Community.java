@@ -1,9 +1,8 @@
-package com.rainbowsweet.lastdance.model;
+package com.rainbowsweet.lastdance.entity;
 
 
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicUpdate;
-import com.rainbowsweet.lastdance.model.Comment;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

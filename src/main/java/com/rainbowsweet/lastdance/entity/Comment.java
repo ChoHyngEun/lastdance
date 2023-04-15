@@ -1,4 +1,4 @@
-package com.rainbowsweet.lastdance.model;
+package com.rainbowsweet.lastdance.entity;
 
 
 import org.hibernate.annotations.DynamicUpdate;
