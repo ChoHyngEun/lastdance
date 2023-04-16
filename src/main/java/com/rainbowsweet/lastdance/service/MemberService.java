@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 @Service
 public class MemberService {
@@ -54,6 +55,20 @@ public class MemberService {
     public void incrementLoginCount(Member member) {
         member.setLogincount(member.getLogincount() + 1);
         memberRepository.save(member);
+    }
+    //회원탈퇴 관련
+    public boolean deleteMember(String memberId) {
+        Member member = memberRepository.findByMemberId(memberId);
+        if (member != null) {
+            memberRepository.delete(member);
+            return true;
+        } else {
+            return false;
+        }
+    }
+    //회원검색 기능
+    public List<Member> searchMembers(String keyword){
+        return memberRepository.findByName(keyword);
     }
 
 }

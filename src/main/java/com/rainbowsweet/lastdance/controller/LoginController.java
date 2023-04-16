@@ -39,7 +39,7 @@ public class LoginController {
         if (member != null) {
             request.getSession().setAttribute("member", member);
             memberService.incrementLoginCount(member);
-            return "redirect:/mypage";
+            return "redirect:/";
         } else {
             model.addAttribute("error", "아이디 또는 비밀번호가 일치하지 않습니다.");
             return "login";

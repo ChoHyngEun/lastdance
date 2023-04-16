@@ -1,5 +1,7 @@
 package com.rainbowsweet.lastdance.entity;
 
+import com.rainbowsweet.lastdance.Enum.MembershipGrade;
+import com.rainbowsweet.lastdance.Enum.MembershipLevel;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
@@ -58,14 +60,39 @@ public class Member implements Serializable {
     @Column(nullable = false)
     private String otpcheck = "";
 
+    private MembershipLevel level = MembershipLevel.Lv1;
+
+    private int exp = 0;
+
+    public void increaseExp(int amount) {
+        this.exp += amount;
+
+        // 레벨업 체크
+        while (this.exp >= level.getRequiredExpForNextLevel()) {
+            this.level = level.nextLevel();
+            this.exp -= level.getRequiredExpForNextLevel();
+        }
+    }
+
+    private int getRequiredExpForNextLevel() {
+        return level.getRequiredExpForNextLevel();
+    }
+
+    private int grade = 1;
+
+    @OneToOne(mappedBy = "member")
+    private Membership membership;
     public Member(){
 
     }
-    public Member(String memberId, String name, String password, String email){
+    public Member(String memberId, String name, String password, String email, MembershipLevel level, int exp, Membership membership){
         this.memberId = memberId;
         this.name = name;
         this.password = password;
         this.email = email;
+        this.level = level;
+        this.exp = exp;
+        this.membership = membership;
     }
 
     public Long getId(){
@@ -147,4 +174,38 @@ public class Member implements Serializable {
 /*public changePassword(String newPassword){
         this.password = newPassword;
     }*/
+
+    public MembershipLevel getLevel() {
+        return level;
+    }
+
+    public void setLevel(MembershipLevel level) {
+        this.level = level;
+    }
+
+    public int getExp() {
+        return exp;
+    }
+
+    public void setExp(int exp) {
+        this.exp = exp;
+    }
+
+    public int getGrade() {
+        return grade;
+    }
+
+    public void setGrade(int grade) {
+        this.grade = grade;
+    }
+
+    public Membership getMembership() {
+        return membership;
+    }
+
+    public void setMembership(Membership membership) {
+        this.membership = membership;
+    }
+
+
 }
